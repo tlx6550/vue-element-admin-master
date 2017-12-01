@@ -15,7 +15,6 @@
         </template>
        <!-- 编译多级的子菜单，且不需隐藏的-->
         <template v-for="child in item.children" v-if='!child.hidden'>
-
           <sidebar-item class='nest-menu' v-if='child.children&&child.children.length>0' :routes='[child]'> </sidebar-item>
 
           <router-link v-else :to="item.path+'/'+child.path">
@@ -25,7 +24,6 @@
           </router-link>
 
         </template>
-
       </el-submenu>
 
     </template>

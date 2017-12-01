@@ -12,6 +12,7 @@
 export default {
   computed: {
     visitedViews() {
+      // 只取倒数第六个开始，保证只展现6个可关闭的标签tab
       return this.$store.state.app.visitedViews.slice(-6)
     }
   },
@@ -19,6 +20,8 @@ export default {
     closeViewTabs(view, $event) {
       this.$store.dispatch('delVisitedViews', view).then((views) => {
         if (this.isActive(view.path)) {
+          // slice() 方法可从已有的数组中返回选定的元素。
+          // -1 指最后一个元素，-2 指倒数第二个元素
           const latestView = views.slice(-1)[0]
           if (latestView) {
             this.$router.push(latestView.path)

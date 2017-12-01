@@ -43,3 +43,55 @@ search	从问号 (?) 开始的 URL（查询部分）
 
  // 用来刷新父窗口https://www.cnblogs.com/itliucheng/p/4917518.html
  window.opener.location.href = window.location.origin + '/login#' + hash
+ 
+ 动态换肤简单思路
+ 将生成好的样式文件，通过gulp-css-wrap工具[批量为css文件扩展命名空间]
+ 如.a{} 批量后改为.new.a{}
+ 然后在body处动态切换添加class为new即可
+ 
+ 使用递归组件解决菜单多级时候嵌套问题
+ 
+ 使用过滤管道函数
+ <el-tag :type="scope.row.status | statusFilter">{{scope.row.status}}</el-tag>
+ filters: {
+     statusFilter(status) {
+       const statusMap = {
+         published: 'success',
+         draft: 'gray',
+         deleted: 'danger'
+       }
+       return statusMap[status]
+     }
+   }
+   
+  this.$set(v, 'edit', false) 
+  vm.$set( target, key, value ) 
+  返回值： 设置的值.
+
+//赋值对象是一个obj
+this.objData=Object.assign({}, row) //这样就不会共用同一个对象
+
+//数组我们也有一个巧妙的防范
+newArray = oldArray.slice(); //slice会clone返回一个新数组
+
+假设我们有四个tab选项，每个tab都会向后端请求数据，但我们希望一开始只会请求当前的tab数据，而且tab来回切换的时候不会重复请求，只会实例化一次。首先我们想到的就是用v-if 这样的确能做到一开始不会挂载后面的tab，但有一个问题，每次点击这个tab组件都会重新挂载一次，这是我们不想看到的，这时候我们就可以用到<keep-alive>了。
+keep-alive 
+包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。 它是一个抽象组件：它自身不会渲染一个 DOM 元素，也不会出现在父组件链中。
+
+// slice() 方法可从已有的数组中返回选定的元素。
+// -1 指最后一个元素，-2 指倒数第二个元素
+
+通过观察路由的变化，执行相应的函数
+  watch: {
+    $route() {
+      this.addViewTabs()
+    }
+  }
+  
+  // 保证每次切入的试图都重新加载
+<router-view :key="key"></router-view> 
+computed: {
+    key() {
+      return this.$route.name !== undefined ? this.$route.name + +new Date() : this.$route + +new Date()
+    }
+  }

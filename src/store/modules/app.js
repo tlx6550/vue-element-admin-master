@@ -17,11 +17,15 @@ const app = {
       state.sidebar.opened = !state.sidebar.opened
     },
     ADD_VISITED_VIEWS: (state, view) => {
+      // 假如新增的在state里面有，则不再添加
       if (state.visitedViews.some(v => v.path === view.path)) return
       state.visitedViews.push({ name: view.name, path: view.path })
     },
     DEL_VISITED_VIEWS: (state, view) => {
       let index
+      // array.entries()
+      // 返回一个Array Iterator对象，该对象包含数组中每一个索引的键值对
+      // 思路即找到要删除的索引
       for (const [i, v] of state.visitedViews.entries()) {
         if (v.path === view.path) {
           index = i

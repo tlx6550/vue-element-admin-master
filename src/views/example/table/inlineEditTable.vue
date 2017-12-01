@@ -83,10 +83,13 @@ export default {
       this.listLoading = true
       fetchList(this.listQuery).then(response => {
         const items = response.data.items
+        console.log(items[0])
+
         this.list = items.map(v => {
           this.$set(v, 'edit', false)
           return v
         })
+        console.log(this.list[0])
         this.listLoading = false
       })
     }

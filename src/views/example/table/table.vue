@@ -151,7 +151,7 @@
 
 <script>
 import { fetchList, fetchPv } from '@/api/article'
-import waves from '@/directive/waves/index.js' // 水波纹指令
+import waves from '@/directive/waves/index.js' // 自定义添加水波纹指令
 import { parseTime } from '@/utils'
 
 const calendarTypeOptions = [
@@ -162,11 +162,12 @@ const calendarTypeOptions = [
 ]
 
 // arr to obj
+/*Object
+  CN : "中国"*/
 const calendarTypeKeyValue = calendarTypeOptions.reduce((acc, cur) => {
   acc[cur.key] = cur.display_name
   return acc
 }, {})
-
 export default {
   name: 'table_demo',
   directives: {
@@ -331,11 +332,14 @@ export default {
       })
     },
     handleDownload() {
+      // http://blog.csdn.net/zhbhun/article/details/46826129
+      // require.ensure在需要的时候才下载依赖的模块
       require.ensure([], () => {
         const { export_json_to_excel } = require('vendor/Export2Excel')
         const tHeader = ['时间', '地区', '类型', '标题', '重要性']
         const filterVal = ['timestamp', 'province', 'type', 'title', 'importance']
         const data = this.formatJson(filterVal, this.list)
+        // 返回数组
         export_json_to_excel(tHeader, data, 'table数据')
       })
     },

@@ -161,6 +161,7 @@
      return
    }
    let classString = element.className
+   // console.log(classString)// custom-theme
    const nameIndex = classString.indexOf(className)
    if (nameIndex === -1) {
      classString += '' + className
