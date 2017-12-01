@@ -95,3 +95,17 @@ computed: {
       return this.$route.name !== undefined ? this.$route.name + +new Date() : this.$route + +new Date()
     }
   }
+  
+使用 Cross Origin Resource Sharing 解决在A站点跨域访问B站点问题  
+现代主流浏览器，移动端绝大部分浏览器都支持了该种方法，所以前端不需要做什么配置
+只需要后台配置即可
+
+baseurl线上或者测试环境接口的 base_url 不一样是很长见得需求，或者你在本地用了如 easy-mock 这种模拟数据到线上环境你想用自己公司生产环境的数据，这些需求都可以简单的通过用 baseurl 来解决。首先我们在config/下有dev.env.js和prod.env.js这两个配置文件。用它来区分不同环境的配置参数。
+
+webpack在编译的时候（如在run dev 或者 run build时候）（因为在config/index.js下已配置好），会告诉环境使用哪种开发模式
+从而在创建axios实例时候通过process.env自动切换了
+const service = axios.create({
+  baseURL: process.env.BASE_API, // api的base_url 读取config配置文件
+  timeout: 5000                  // 请求超时时间
+});
+
