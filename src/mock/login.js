@@ -29,6 +29,8 @@ export default {
     const { username } = JSON.parse(config.body)
     return userMap[username]
   },
+/*  config
+  指向本次请求的 Ajax 选项集，含有 url、type 和 body 三个属性，参见 XMLHttpRequest 规范。*/
   getUserInfo: config => {
     // config
     // body: null

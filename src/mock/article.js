@@ -5,6 +5,8 @@ const List = []
 const count = 100
 
 for (let i = 0; i < count; i++) {
+/*  Random.increment( step? )
+  生成一个全局的自增整数。*/
   List.push(Mock.mock({
     id: '@increment',
     timestamp: +Mock.Random.date('T'),

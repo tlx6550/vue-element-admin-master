@@ -1,7 +1,7 @@
 <template>
   <div class="icons-container">
     <div class="icons-wrapper">
-      <div v-for='item of iconsMap' :key='item' class='icon-item' @click='handleClipboard(generateIconCode(item),$event)'>
+      <div v-for='item in iconsMap' :key='item' class='icon-item' @click='handleClipboard(generateIconCode(item),$event)'>
         <el-tooltip placement="top" effect="light">
           <div slot="content">
             {{generateIconCode(item)}}
@@ -16,6 +16,8 @@
 
 <script>
 import icons from './generateIconsView'
+/*http://www.jianshu.com/p/3f8867de041e*/
+/*clipboard.js 是一个不需要flash，将文本复制到剪贴板的插件*/
 import clipboard from '@/utils/clipboard' // use clipboard directly
 
 export default {
@@ -25,6 +27,7 @@ export default {
     }
   },
   mounted() {
+//    console.log( icons.state.iconsMap)
     const iconsMap = icons.state.iconsMap.map((i) => {
       return i.default.id.split('-')[1]
     })

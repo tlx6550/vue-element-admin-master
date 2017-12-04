@@ -109,3 +109,26 @@ const service = axios.create({
   timeout: 5000                  // 请求超时时间
 });
 
+使用svg生成图标！值得借鉴
+使用 svg-sprite-loader处理增加的svg图标，生成svg雪碧图
+处理后生成的文件相当于原来的iconfont.js
+注意生成出来的名字已经被定义好了（在webpack.base.conf.js）
+ options: {
+          symbolId: 'icon-[name]'
+        }
+借助到 webpack 的 require.context实现动态按需加载
+
+使用Mock生成随机数
+Mock.Random 是一个工具类，用于生成各种随机数据。
+Mock.Random 的方法在数据模板中称为『占位符』，书写格式为 @占位符(参数 [, 参数]) 。
+https://github.com/nuysoft/Mock/wiki/Mock.Random
+var Random = Mock.Random
+Random.email()
+// => "n.clark@miller.io"
+Mock.mock('@email')
+// => "y.lee@lewis.org"
+Mock.mock( { email: '@email' } )
+// => { email: "v.lewis@hall.gov" }
+
+https://easy-mock.com/docs
+https://easy-mock.com/docs#swagger
