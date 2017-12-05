@@ -164,6 +164,7 @@ const calendarTypeOptions = [
 // arr to obj
 /*Object
   CN : "中国"*/
+/*reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。*/
 const calendarTypeKeyValue = calendarTypeOptions.reduce((acc, cur) => {
   acc[cur.key] = cur.display_name
   return acc

@@ -132,3 +132,9 @@ Mock.mock( { email: '@email' } )
 
 https://easy-mock.com/docs
 https://easy-mock.com/docs#swagger
+
+reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
+reverse() 方法用于颠倒数组中元素的顺序。
+
+前台请求数据的时候，地址默认会被encodeURIComponent编码，后台若要拿到正确的参数
+需要对其进行解码decodeURIComponent()

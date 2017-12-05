@@ -112,7 +112,10 @@
    if (!search) {
      return {}
    }
-   return JSON.parse('{"' + decodeURIComponent(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
+   /*console.log(search)page=1&limit=20&sort=%2Bid*/
+  /* console.log(decodeURIComponent(search))page=1&limit=20&sort=+id*/
+  /* string.replace(searchvalue,newvalue)*/
+     return JSON.parse('{"' + decodeURIComponent(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
  }
 
  export function html2Text(val) {

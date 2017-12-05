@@ -34,6 +34,7 @@ export default {
     })
 
     if (sort === '-id') {
+      /*reverse() 方法用于颠倒数组中元素的顺序。*/
       mockList = mockList.reverse()
     }
 
