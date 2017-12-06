@@ -15,7 +15,7 @@ export default {
   components: { Tinymce },
   data() {
     return {
-      content: 'Tinymce'
+      content: 'Tinymce6666'
     }
   }
 }

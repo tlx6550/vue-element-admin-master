@@ -136,5 +136,19 @@ https://easy-mock.com/docs#swagger
 reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
 reverse() 方法用于颠倒数组中元素的顺序。
 
+every() 方法使用指定函数检测数组中的所有元素：
+如果数组中检测到有一个元素不满足，则整个表达式返回 false ，且剩余的元素不会再进行检测。
+如果所有元素都满足条件，则返回 true。
+
 前台请求数据的时候，地址默认会被encodeURIComponent编码，后台若要拿到正确的参数
 需要对其进行解码decodeURIComponent()
+
+$route.matched
+一个数组，包含当前路由的所有嵌套路径片段的 路由记录
+
+/*.$el Vue 实例使用的根 DOM 元素。*/
+ this.chart = echarts.init(this.$el, 'macarons')
+ 
+ Sortable
+ 拖放排序插件Sortable.js
+ https://segmentfault.com/a/1190000008209715

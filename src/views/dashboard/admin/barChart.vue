@@ -39,6 +39,7 @@ export default {
   },
   methods: {
     initChart() {
+      /*.$el Vue 实例使用的根 DOM 元素。*/
       this.chart = echarts.init(this.$el, 'macarons')
 
       this.chart.setOption({
