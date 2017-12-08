@@ -152,3 +152,6 @@ $route.matched
  Sortable
  拖放排序插件Sortable.js
  https://segmentfault.com/a/1190000008209715
+ 
+ ...对象扩展
+ http://blog.csdn.net/qq_30100043/article/details/53391308
