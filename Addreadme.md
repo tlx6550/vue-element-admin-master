@@ -153,5 +153,7 @@ $route.matched
  拖放排序插件Sortable.js
  https://segmentfault.com/a/1190000008209715
  
+ 尤雨溪常见问题汇总
+ https://juejin.im/post/59fa9257f265da43062a1b0e?utm_source=weibo&utm_campaign=admin#comment
  ...对象扩展
  http://blog.csdn.net/qq_30100043/article/details/53391308
